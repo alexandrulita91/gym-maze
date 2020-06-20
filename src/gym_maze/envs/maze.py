@@ -1,5 +1,5 @@
 """
-Maze module
+Maze definition
 """
 import random
 import numpy as np

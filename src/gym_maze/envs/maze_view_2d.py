@@ -1,5 +1,5 @@
 """
-Maze view
+Maze view 2d
 """
 
 import numpy as np
@@ -247,14 +247,3 @@ class MazeView2D:
     @property
     def robot(self) -> np.array:
         return self.__robot
-
-
-if __name__ == '__main__':
-    # maze_view_2d = MazeView2D(maze_size=(10, 10), screen_size=(500, 500))
-    maze_view_2d = MazeView2D(screen_size=(500, 500), maze_size=(10, 10))
-
-    while True:
-        maze_view_2d.process_input()
-        maze_view_2d.render()
-        if np.array_equal(maze_view_2d.robot, maze_view_2d.goal):
-            maze_view_2d.reset_game()
