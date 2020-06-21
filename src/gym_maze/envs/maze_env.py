@@ -9,7 +9,7 @@ from gym import spaces
 
 from gym_maze.envs.maze_view_2d import MazeView2D
 
-SAMPLES_DIR = os.path.join(os.getcwd(), "samples")
+SAMPLES_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), "samples")
 
 
 class MazeEnv(gym.Env):
@@ -63,9 +63,6 @@ class MazeEnv(gym.Env):
             info (dict): contains auxiliary diagnostic information (helpful for debugging, and sometimes learning)
 
         """
-        # Handles the user input
-        self.maze_view.process_input()
-
         # Moves the robot to a new (x,y) coordinate
         if action in self.actions:
             self.maze_view.move_robot(action)
@@ -101,6 +98,9 @@ class MazeEnv(gym.Env):
             mode (str): the mode to render with
 
         """
+        # Handles the user input
+        self.maze_view.process_input()
+
         if mode == 'human':
             self.maze_view.render()
         else:
