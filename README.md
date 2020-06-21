@@ -31,6 +31,9 @@ The maze is reset when the agent reaches the goal.
 * 100 cells x 100 cells: _MazeEnvRandom100x100_
 
 ## Requirements
-First of all, you need Python **3.6** or **3.7** to run the script. After this, install the required packages. 
+You need Python **3.6** or **3.7** to run the script. After this, install the required packages. 
 - `python setup.py install`
+Another way to install the package is by using test.pypi.org.
+- `pip install -i https://test.pypi.org/simple/ gym-maze-trustycoder83`
+
 
