@@ -46,7 +46,7 @@ class MazeEnv(gym.Env):
         high: np.ndarray = np.array(self.maze_size, dtype=int) - np.ones(len(self.maze_size), dtype=int)
         self.observation_space: spaces.Box = spaces.Box(low, high, dtype=np.int64)
 
-    def step(self, action: str) -> Tuple[np.array, float, bool, Dict]:
+    def step(self, action: int or str) -> Tuple[np.array, float, bool, Dict]:
         """Run one timestep of the environment's dynamics. When end of
         episode is reached, you are responsible for calling `reset()`
         to reset this environment's state.
@@ -54,7 +54,7 @@ class MazeEnv(gym.Env):
         Accepts an action and returns a tuple (observation, reward, done, info).
 
         Args:
-            action (str): an action provided by the agent
+            action (Union[int, str]): an action provided by the agent
 
         Returns:
             observation (object): agent's observation of the current environment
@@ -63,11 +63,10 @@ class MazeEnv(gym.Env):
             info (dict): contains auxiliary diagnostic information (helpful for debugging, and sometimes learning)
 
         """
-        # Moves the robot to a new (x,y) coordinate
-        if action in self.actions:
-            self.maze_view.move_robot(action)
+        if isinstance(action, int):
+            self.maze_view.move_robot(self.actions[action])
         else:
-            raise ValueError("Received invalid action={} which is not part of the action space".format(action))
+            self.maze_view.move_robot(action)
 
         if np.array_equal(self.maze_view.robot, self.maze_view.goal):
             reward: float = 1

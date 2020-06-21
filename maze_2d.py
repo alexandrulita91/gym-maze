@@ -9,7 +9,7 @@ if __name__ == "__main__":
     env.reset()
     while True:
         env.render()
-        action = DIRECTIONS[env.action_space.sample()]
+        action = env.action_space.sample()
         env.step(action)
 
 
