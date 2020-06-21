@@ -33,6 +33,7 @@ The maze is reset when the agent reaches the goal.
 ## Requirements
 You need Python **3.6** or **3.7** to run the script. After this, install the required packages. 
 - `python setup.py install`
+
 Another way to install the package is by using test.pypi.org.
 - `pip install -i https://test.pypi.org/simple/ gym-maze-trustycoder83`
 
