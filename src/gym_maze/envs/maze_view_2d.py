@@ -176,8 +176,13 @@ class MazeView2D:
                 pygame.quit()
                 exit(0)
 
-    def render(self) -> np.flipud:
-        """Renders the game objects."""
+    def render(self, mode="human") -> np.flipud:
+        """Renders the game objects.
+
+        Args:
+            mode (str): the mode to render with
+
+        """
         self.__screen.blit(self.__background, (0, 0))
         self.__screen.blit(self.__game_surface, (0, 0))
 
@@ -187,8 +192,8 @@ class MazeView2D:
         self.__color_goal()
         self.__color_robot()
 
-        # Renders the game objects to the screen
-        pygame.display.flip()
+        if mode == "human":
+            pygame.display.flip()
 
         return np.flipud(np.rot90(pygame.surfarray.array3d(pygame.display.get_surface())))
 

@@ -14,7 +14,7 @@ SAMPLES_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), "samples
 
 class MazeEnv(gym.Env):
     metadata = {
-        "render.modes": ["human"]
+        "render.modes": ["human", "rgb_array"]
     }
 
     # Define constants for clearer code
@@ -100,8 +100,8 @@ class MazeEnv(gym.Env):
         # Handles the user input
         self.maze_view.process_input()
 
-        if mode == 'human':
-            self.maze_view.render()
+        if mode in ['human', 'rgb_array']:
+            return self.maze_view.render(mode)
         else:
             super(MazeEnv, self).render(mode=mode)
 
