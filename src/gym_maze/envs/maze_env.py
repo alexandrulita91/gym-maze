@@ -65,8 +65,10 @@ class MazeEnv(gym.Env):
         """
         if isinstance(action, int):
             self.maze_view.move_robot(self.actions[action])
-        else:
+        elif isinstance(action, str):
             self.maze_view.move_robot(action)
+        else:
+            raise TypeError("Invalid type for action, only 'int' and 'str' are allowed")
 
         if np.array_equal(self.maze_view.robot, self.maze_view.goal):
             reward: float = 1
