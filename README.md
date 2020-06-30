@@ -35,6 +35,6 @@ You need Python **3.6** or **3.7** to run the script. After this, install the pa
 - `python setup.py install`
 
 Another way to install the package is by using test.pypi.org.
-- `pip install -i https://test.pypi.org/simple/ gym-maze-trustycoder83`
+- `pip install gym-maze-trustycoder83`
 
 
