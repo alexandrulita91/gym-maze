@@ -37,6 +37,9 @@ You need Python **3.6** or **3.7** to run the script. After this, install the pa
 Another way to install the package is by using test.pypi.org.
 - `pip install gym-maze-trustycoder83`
 
+## Demo video (DQN)
+https://www.youtube.com/watch?v=zUdLT6a6ivU
+
 ## Improvement ideas
 - improve the code quality
 - remove unnecessary comments
