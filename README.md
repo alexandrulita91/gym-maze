@@ -2,6 +2,9 @@
 
 A simple 2d maze environment for Open AI Gym, where the agent needs to finds its way from the top left corner to the bottom right corner.
 
+## Demo video (Q-learning)
+https://www.youtube.com/watch?v=zUdLT6a6ivU
+
 ### Action space
 The agent may only choose to go up, down, left, or right ("N", "S", "W", "E"). If the way is blocked, it will remain at the same the location.
 
@@ -37,11 +40,6 @@ You need Python **3.6** or **3.7** to run the script. After this, install the pa
 Another way to install the package is by using test.pypi.org.
 - `pip install gym-maze-trustycoder83`
 
-## Demo video (DQN)
-https://www.youtube.com/watch?v=zUdLT6a6ivU
-
 ## Improvement ideas
 - improve the code quality
 - remove unnecessary comments
-
-
